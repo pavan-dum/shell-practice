@@ -6,7 +6,7 @@ START_TIME=$(date +%s)
 echo "start time: $START_TIME"
 
 sleep 5 &
-PID = $!
+PID=$!
 
 wait $PID
 
