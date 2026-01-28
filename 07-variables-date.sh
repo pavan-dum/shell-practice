@@ -5,7 +5,7 @@ echo "time stamp: $TIME_STAMP"
 START_TIME=$(date +%s)
 echo "start time: $START_TIME"
 
-sleep 100 &
+sleep 5 &
 
 END_TIME=$(date +%s)
 echo "end time: $END_TIME"
