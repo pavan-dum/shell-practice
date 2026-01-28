@@ -6,6 +6,9 @@ START_TIME=$(date +%s)
 echo "start time: $START_TIME"
 
 sleep 5 &
+PID = $!
+
+wait $PID
 
 END_TIME=$(date +%s)
 echo "end time: $END_TIME"
