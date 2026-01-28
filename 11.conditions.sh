@@ -2,7 +2,7 @@
 
 num=$1
 target=50
-if [$num -gt $tagret]; then
+if [$num -gt $target]; then
     echo " > target achieved."
 
 elif [$num -eq $target]; then
