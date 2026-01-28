@@ -3,6 +3,6 @@
 echo "please enter password:"
 read -s PASSWORD
 
-echo "password : $PASSWORD"
+#echo "password : $PASSWORD"
 
 
