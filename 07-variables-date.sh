@@ -1,5 +1,6 @@
 #!/bin/bash
 TIME_STAMP=$(date)
+echo "time stamp: $TIME_STAMP"
 
 START_TIME=$(date +%s)
 echo "start time: $START_TIME"
