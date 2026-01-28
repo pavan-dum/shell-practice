@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-UID=$(id -u)
+USER_ID=$(id -u)
 
-if [ $UID -ne 0 ]; then
+if [ $USER_ID -ne 0 ]; then
     echo "get root access to download nginx."
     exit 1
 
