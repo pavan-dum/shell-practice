@@ -1,13 +1,14 @@
 #!/bin/bash
 
 func () {
-    sudo dnf install $2 -y
-    if [ $1 -ne 0 ]; then
-        echo "$2 Installation.....FAILURE"
+    sudo dnf install $1 -y
+    if [ $? -ne 0 ]; then
+        echo "$1 Installation.....FAILURE"
     else
-        echo "$2 Installation.....SUCCESS"
+        echo "$1 Installation.....SUCCESS"
     fi
 }
 
 
-func $? nginx
+func nginx
+func mysql
