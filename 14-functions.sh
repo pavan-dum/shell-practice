@@ -6,7 +6,8 @@ func () {
         echo "$2 Installation.....FAILURE"
     else
         echo "$2 Installation.....SUCCESS"
+    fi
 }
 
 
-func $? NGINX
+func $? nginx
