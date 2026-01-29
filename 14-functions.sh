@@ -1,11 +1,12 @@
 #!/bin/bash
 
-func(){
-    if [ $? -ne 0]; then
-        echo "Nginx Installation.....FAILURE"
+func($@){
+    dnf install $2 -y
+    if [ $1 -ne 0]; then
+        echo "$2 Installation.....FAILURE"
     else
-        echo "Nginx Installation.....SUCCESS"
+        echo "$2 Installation.....SUCCESS"
 }
 
-dnf install nginx -y
-func $?
+
+func $? NGINX
