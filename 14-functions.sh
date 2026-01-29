@@ -1,6 +1,6 @@
 #!/bin/bash
 
-func($@){
+func($@) {
     dnf install $2 -y
     if [ $1 -ne 0]; then
         echo "$2 Installation.....FAILURE"
