@@ -23,10 +23,10 @@ VALIDATE (){
 
 
 dnf install nginx -y &>> $LOGS_FILE
-echo $? "Installing Nginx..."
+VALIDATE $? "Installing Nginx..."
 
 systemctl start nginx &>> $LOGS_FILE
-echo $? "Starting Nginx..."
+VALIDATE $? "Starting Nginx..."
 
 systemctl enable nginx &>> $LOGS_FILE
-echo $? "Enabling Nginx..."
+VALIDATE $? "Enabling Nginx..."
