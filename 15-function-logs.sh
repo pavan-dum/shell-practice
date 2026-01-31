@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 UUID=$(id -u)
 LOGS_FOLDER="/var/log/sample-logs"
@@ -14,9 +14,9 @@ mkdir -p $LOGS_FOLDER
 VALIDATE (){
      
     if [ $1 -ne 0 ]; then
-        echo "$2.....FAILURE"
+        echo "$2.....FAILURE" | tee -a $LOGS_FILE
     else
-        echo "$2.....SUCCESS"
+        echo "$2.....SUCCESS" | tee -a $LOGS_FILE
     fi
 }
 
@@ -25,8 +25,8 @@ VALIDATE (){
 dnf install nginx -y &>> $LOGS_FILE
 echo $? "Installing Nginx..."
 
-systemctl start nginx | tee -a $LOGS_FILE
+systemctl start nginx &>> $LOGS_FILE
 echo $? "Starting Nginx..."
 
-systemctl enable nginx | tee -a $LOGS_FILE
+systemctl enable nginx &>> $LOGS_FILE
 echo $? "Enabling Nginx..."
