@@ -19,7 +19,7 @@ VALIDATE(){
 for package in "$@"
 do
     dnf list installed $package
-    if [ $? -ne 0]; then
+    if [ $? -ne 0 ]; then
         echo " Already Installed....$Y SKIPPING"
     else:
          dnf install $package -y
