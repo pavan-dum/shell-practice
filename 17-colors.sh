@@ -1,15 +1,15 @@
 #!/bin/bash
 
 R='\e[31m'
-G='\e[31m'
-Y='\e[31m'
+G='\e[32m'
+Y='\e[33m'
 
 
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
         echo "$2....$R FAILURE"
-    else:
+    else
         echo "$2....$G SUCCESS"
     fi
 }
@@ -20,9 +20,10 @@ for package in "$@"
 do
     dnf list installed $package
     if [ $? -ne 0 ]; then
-        echo " Already Installed....$Y SKIPPING"
+        dnf install $package -y
+        VALIDATE $? "$package Insatllation"
+        
     else:
-         dnf install $package -y
-         VALIDATE $? "$package Insatllation"
+        echo " Already Installed....$Y SKIPPING"
     fi
 done
