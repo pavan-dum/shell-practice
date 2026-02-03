@@ -5,4 +5,6 @@ COUNTRY="INDIA"
 echo "My Country is: $COUNTRY"
 echo "$$"
 
-sh 20-script-2.sh
+#sh 20-script-2.sh
+
+source ./20-script-2.sh

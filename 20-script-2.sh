@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COUNTRY="UAE"
+#COUNTRY="UAE"
 
 echo "Country name: $COUNTRY"
 echo "$$"
